@@ -33,7 +33,7 @@ def attempt(IP, UserName, Password):
     ssh = SSHClient()
     ssh.set_missing_host_key_policy(AutoAddPolicy())
     try:
-        ssh.connect(IP, username=UserName, port=22, password=Password, timeout=10, allow_agent=False, look_for_keys=False, pkey=None)
+        ssh.connect(IP, username=UserName, port=22, password=Password, timeout=5, allow_agent=False, look_for_keys=False, pkey=None)
     except Exception, e:
         print '\t[-] %s:%s fail!' % (UserName, Password)
     else:
